@@ -1,173 +1,90 @@
-/* Header/Nav */
-header {
-    display: inline;
-    position : fixed;
-    top: 1%;
-    left: 0;
-    width: 100%;
-    font-size: 17px;
-    width: 100%;
-    height: 50px;
-    padding-bottom: 10px;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.navbar .logo {
-    color: rgba(100,100,100, 0.95);
-    position: fixed;
-    left: 5%;
-    padding: 10px;
-    font-size: 2em;
-}
-
-.nav-links li{
-    display: inline-block;
-    list-style: none;
-    padding-top: 5px;
-}
-.nav-links li a{
-    text-decoration: none;
-    color: rgba(100,100,100, 0.95);
-    padding: 10px;
-    margin: 0;
-}
-
-.nv{
-    padding-right: 40px;
-    position: relative;
-    right: 20%;
-}
-.nv a:hover{
-    border-bottom: 2px solid;
-}
-.theme{
-    position: relative;
-    right: 20%;
-    cursor: pointer;
-    color: rgba(100,100,100, 0.95);
-}
-
-.connection{
-    width: auto;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    right: 20px;
-    position: absolute;
-    top: 0;
-  }
-
-/* menu burger */
-
-  .burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.burger span {
-    width: 25px;
-    height: 3px;
-    background-color: grey;
-    margin: 4px;
-}
-/* text */
-.texto {
-    text-align: justify;
-    padding-right: 50px;
-    width: 350px;
-    height: 100px;
-   
-}
-.texto .to{
-    color: #A24E3D;
-}
-
-/* Styles pour mobile */
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 8px;
-        right: 0;
-        width: 100px;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .burger {
-        display: flex;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-}
-
-/* Slider infinite */
+/* slide infini & css text */
 .slide-container {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 15%;
 }
 
-.slide-image{
-    width: 500px;
-    height: 350px;
-    position: absolute;
-    top: -5%;
-    right:-630px;
+.text {
+    color: #A24E3D;
+    text-align: justify;
+    width: 350px;
+    height: 100px;
 }
-/* button prev/next and dot */
 
-.prev,
-.next {
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
+.slide-text {
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: #333;
-    font-size: 30px;
-    background-color: rgba(0, 0, 0, 0);
-    transition: background-color 0.6s ease;
+    justify-content: space-between;
+    padding: 25px;
 }
 
-.prev {
-    left: 55px;
+h1 {
+    color: black;
 }
 
-.next {
-    right: 55px;
+h2 {
+    color: rgba(233, 197, 136, 1);
 }
 
-.prev:hover,
-.next:hover {
-    color: whitesmoke;
-    background-color: #333;
-    opacity: 0.7;
+.slide-image {
+    border-radius: 10px;
+    width: 350px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    right: -550px;
 }
+
+/* blocs de formes */
+.divrad {
+    position: absolute;
+    transition: transform 2s ease-in-out;
+}
+
+body {
+    margin: 0;
+}
+
+#rad1 {
+    border: 1px solid rgba(233, 197, 136, 0.3);
+    background-color: rgba(233, 197, 136, 0.3);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    width: 150px;
+    height: 110px;
+}
+
+#rad2 {
+    border: 1px solid rgba(162, 78, 61, 0.4);
+    background-color: rgba(162, 78, 61, 0.4);
+    border-radius: 30% 70% 70% 30% / 45% 77% 23% 55%;
+    width: 150px;
+    height: 110px;
+}
+
+#rad3 {
+    border: 1px solid rgba(233, 197, 136, 0.3);
+    background-color: rgba(233, 197, 136, 0.3);
+    border-radius: 31% 69% 76% 24% / 61% 65% 35% 39%;
+    width: 150px;
+    height: 130px;
+}
+
+#rad4 {
+    border: 1px solid rgba(162, 78, 61, 0.4);
+    background-color: rgba(162, 78, 61, 0.4);
+    border-radius: 46% 54% 20% 80% / 76% 44% 56% 24%;
+    width: 150px;
+    height: 150px;
+}
+
+/* css dot  */
 
 .slide-dot {
     text-align: center;
-    position: fixed;
+    position: absolute;
     bottom: 15%;
-    left: 43%;
+    left: 48%;
 }
 
 .dot {
@@ -178,13 +95,16 @@ header {
     background-color: #333;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.6s ease;
 }
 
-.dot.active,
+.active,
 .dot:hover {
-    background-color: red;
+    height: 10px;
+    width: 10px;
+    background-color: rgba(233, 197, 136, 1);
 }
+
 .fade {
     animation-name: fade;
     animation-duration: 1s;
@@ -199,7 +119,226 @@ header {
         opacity: 1;
     }
 }
-.slide-image {
+
+/* Navbar */
+header {
+    display: inline;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 17px;
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(233, 197, 136, 1);
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgba(233, 197, 136, 0);
+    padding-bottom: 10px;
+}
+
+img {
+    width: 35px;
+    height: 35px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+    list-style: none;
+
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 10px;
+    margin: 0;
+}
+.nav-links li a:hover {
+    color: black;
+    border-bottom: 1px solid whitesmoke;
+}
+.logo_name {
+    text-decoration: none;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+.nv {
+    padding-right: 20px;
+    position: relative;
+    right: 5%;
+}
+
+.connection {
+    width: auto;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    right: 20px;
+    position: absolute;
+    top: 0;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 40px;
     background-size: contain;
-    background-repeat: no-repeat;
+    color: whitesmoke;
+    background-color: rgba(233, 197, 136, 1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* button burger-menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px;
+}
+
+/* Styles pour mobile */
+
+@media (max-width: 811px) {
+
+    /* nav_bar  */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 33px;
+        right: 0;
+        width: auto;
+    }
+
+    .nav-links li {
+        margin: 0 0;
+        padding: 8px;
+        background-color: rgba(233, 197, 136, 1);
+        border-bottom: 1px solid whitesmoke;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        color: black;
+    }
+    .nav-links li a:hover {
+        color: whitesmoke;
+    }
+    /* main  */
+    .slide-text{
+        flex-direction: column;
+        justify-items: center;
+        width: 80%;
+        padding: 0;
+        margin: 0;
+    }
+    .text1{
+        position: relative;
+        top: -10%;
+        left: -15%;
+    }
+    .slide-image{
+        position: relative; 
+        top: 50%;
+        left: -15%;
+        padding-top: 15px;
+    }
+    /* masquer les dots et les formes */
+   
+    .divrad, .slide-dot, .logo sup{
+        visibility: hidden;
+    }
+}
+@media (max-width: 435px) {
+    body{
+    overflow: hidden;
+}
+    .slide-text {
+        flex-direction: column; 
+        align-items: center;
+        width: 50vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text1 {
+        position: fixed; 
+        top: 15%;
+        left: 10%;
+        width: 250px;
+        height: 100px;
+    }
+    .text {
+        text-align: justify;
+        width: 250px;
+        height: 100px;
+    }
+    .slide-image {
+        position: fixed; 
+        top: 50%;
+        left: 10%;
+        width: 250px;
+        height: 150px;
+        background-size: cover; 
+        background-repeat: no-repeat;
+    }
+    header, footer{
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 812px) and (max-width: 1024px) {
+    .slide-container{
+        position: absolute;
+        top: 20%;
+        left: 5%;
+    }
+    .slide-text {
+        position: absolute;
+        left: -10%;
+        width: 50vw;
+        padding: 0;
+        margin: 0;
+    }
+    .text1 {
+        width: 250px;
+        height: 100px;
+    }
+    .text {
+        text-align: justify;
+        width: 250px;
+        height: 100px;
+    }
+    .slide-image {
+        border-radius: 10px;
+        width: 350px;
+        height: 250px;
+        position: absolute;
+        padding: 20px;
+        top: 10%;
+        right: -350px;
+    }
 }
